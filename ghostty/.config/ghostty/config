@@ -1,0 +1,8 @@
+background-opacity = 0.98
+font-size = 16
+font-family = JetBrains Mono
+theme = flexoki-dark
+window-colorspace = display-p3
+quick-terminal-position = bottom
+
+keybind = global:alt+space=toggle_quick_terminal
