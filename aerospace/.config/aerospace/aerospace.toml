@@ -212,5 +212,21 @@ automatically-unhide-macos-hidden-apps = true
     shift-down = ['volume set 0', 'mode main']
 
 [[on-window-detected]]
-    if.app-id = 'org.alacritty'
-    run = 'move-node-to-workspace T' # mnemonics T - Terminal
+    if.app-id = 'com.mitchellh.ghostty'
+    run = 'move-node-to-workspace T'
+
+[[on-window-detected]]
+    if.app-id = 'org.mozilla.firefox'
+    run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+    if.app-id = 'dev.zed.Zed'
+    run = 'move-node-to-workspace I'
+
+[[on-window-detected]]
+    if.app-id = 'ch.protonmail.desktop'
+    run = 'move-node-to-workspace C'
