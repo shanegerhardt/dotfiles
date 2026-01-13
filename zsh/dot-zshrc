@@ -1,6 +1,6 @@
 # File system
 alias ls='eza --grid --color=auto --git --no-filesize --icons=always --no-time --no-user --no-permissions'
-alias ff="fzf --preview 'bat --style=numbers --color=always {}' --print0 | xargs -0 -o nvim"
+alias ff="fzf --preview 'bat --style=numbers --color=always {}' --print0 | xargs -0 zed"
 alias cd='z'
 
 # Directories
@@ -14,3 +14,7 @@ source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

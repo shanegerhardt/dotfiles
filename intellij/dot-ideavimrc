@@ -1,0 +1,77 @@
+"" Base Settings
+"" ========================================================
+
+set scrolloff=10
+set showmode
+set showcmd
+set relativenumber
+
+set smartcase
+set incsearch
+set hlsearch
+
+set visualbell
+
+" Use system clipboard
+set clipboard+=unnamed
+
+let mapleader = " "
+
+"" Plugin Settings
+"" ========================================================
+
+set surround
+set highlightedyank
+set NERDTree
+
+"" Key mappings
+"" ========================================================
+
+inoremap jk <Esc>
+map gh ^
+map gl $
+
+" Formatting
+nnoremap == :action ReformatCode <CR>
+vnoremap == :action ReformatCode <CR>
+
+nnoremap cc :action CommentByLineComment <CR>
+vnoremap cc :action CommentByLineComment <CR>
+
+" split window
+nnoremap <leader>sv :action SplitVertically <CR>
+nnoremap <leader>sc :action UnsplitAll <CR>
+nnoremap <leader>v :action NextSplitter <CR>
+
+" tabs
+nmap <leader>h :action PreviousTab<CR>
+nmap <leader>l :action NextTab<CR>
+nmap <leader>bd :action CloseEditor<CR>
+
+" refactoring
+map <leader>re :action RenameElement <CR>
+
+" extract
+nnoremap <leader>iv :action IntroduceVariable <CR>
+nnoremap <leader>em :action ExtractMethod  <Cr>
+vnoremap <leader>em :action ExtractMethod  <Cr>
+nnoremap <leader>ic :action IntroduceConstant <CR>
+
+" file navigation
+nnoremap gb :action Back <CR>
+nnoremap gf :action Forward <CR>
+nnoremap gj :action MethodDown <CR>
+nnoremap gk :action MethodUp <CR>
+nnoremap gd :action GotoDeclaration <CR>
+
+" VCS
+vnoremap -- :action Vcs.RollbackChangedLines <CR>
+
+" IDE Actions
+nnoremap <CR><CR> :action ShowIntentionActions<CR>
+
+"" Leader commands
+"" ========================================================
+
+" Open NERDTree (use q to exit)
+map <leader>pv :NERDTreeToggle<CR>

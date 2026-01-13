@@ -1,0 +1,15 @@
+brew "fzf"
+brew "eza"
+brew "bat"
+brew "zoxide"
+brew "starship"
+brew "lazygit"
+brew "zsh-autosuggestions"
+
+tap "FelixKratz/formulae"
+brew "borders"
+
+cask "raycast"
+cask "zed"
+cask "nikitabobko/tap/aerospace"
+cask "font-jetbrains-mono"
