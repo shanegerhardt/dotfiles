@@ -1,3 +1,3 @@
 --target=~
---ignore=.stowrc
---ignore=.DS_Store
+--dotfiles
+--ignore=\.DS_Store

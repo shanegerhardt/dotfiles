@@ -1,3 +1,4 @@
+brew "stow"
 brew "fzf"
 brew "eza"
 brew "bat"
