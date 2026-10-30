@@ -1,4 +1,5 @@
 brew "stow"
+brew "openssh"
 brew "fzf"
 brew "eza"
 brew "bat"
