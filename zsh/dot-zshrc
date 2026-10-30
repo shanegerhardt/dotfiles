@@ -15,8 +15,8 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# mise — polyglot runtime manager (node, pnpm, bun, ...). Tool versions and
+# idiomatic-version-file settings live in ~/.config/mise/config.toml.
+eval "$(mise activate zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"

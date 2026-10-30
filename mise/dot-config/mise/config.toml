@@ -1,0 +1,12 @@
+# mise global config — managed in dotfiles, stowed to ~/.config/mise/config.toml
+
+[tools]
+node = "lts"
+pnpm = "latest"
+bun = "latest"
+
+[settings]
+# Read each tool's idiomatic version files: .nvmrc / .node-version and
+# package.json devEngines.runtime for node; package.json packageManager /
+# devEngines.packageManager for pnpm; .bun-version + package.json for bun.
+idiomatic_version_file_enable_tools = ["node", "pnpm", "bun"]
