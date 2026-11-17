@@ -1,17 +1,22 @@
 # File system
 alias ls='eza --grid --color=auto --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 alias ff="fzf --preview 'bat --style=numbers --color=always {}' --print0 | xargs -0 zed"
-alias cd='z'
 
 # Directories
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# Tab completion. Must come before fzf (its ** completion hooks into compdef)
+# and before anything else that registers completions.
+autoload -Uz compinit && compinit
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-eval "$(zoxide init zsh)"
+# zoxide takes over `cd` (smart jumps + plain paths) and adds `cdi` for an
+# interactive picker. Replaces the old `alias cd='z'`.
+eval "$(zoxide init zsh --cmd cd)"
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
