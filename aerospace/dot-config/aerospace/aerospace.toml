@@ -170,9 +170,13 @@ automatically-unhide-macos-hidden-apps = true
     if.app-id = 'com.mitchellh.ghostty'
     run = 'move-node-to-workspace S'
 
-# --- AI (D): Claude Desktop ---
+# --- AI (D): Claude Desktop, T3 Code ---
 [[on-window-detected]]
     if.app-id = 'com.anthropic.claudefordesktop'
+    run = 'move-node-to-workspace D'
+
+[[on-window-detected]]
+    if.app-id = 'com.t3tools.t3code'
     run = 'move-node-to-workspace D'
 
 # --- Web (W): browsers ---
