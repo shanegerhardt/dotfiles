@@ -192,9 +192,11 @@ cmd_gitlocal() {
 [core]
 	sshCommand = $ssh_prefix/bin/ssh
 [gpg "ssh"]
-	program = $ssh_prefix/bin/ssh-keygen
+	# Wrapper (stowed from bin/) that plays a sound when the YubiKey needs a
+	# touch to sign, then runs the real ssh-keygen.
+	program = $HOME/.local/bin/git-ssh-keygen
 EOF
-  log "Wrote $out (ssh: $ssh_prefix/bin/ssh)"
+  log "Wrote $out (ssh: $ssh_prefix/bin/ssh, signing via ~/.local/bin/git-ssh-keygen)"
 }
 
 # ---------------------------------------------------------------------------
