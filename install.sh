@@ -155,6 +155,21 @@ cmd_packages() {
 }
 
 # ---------------------------------------------------------------------------
+# ssh connection multiplexing
+# ---------------------------------------------------------------------------
+
+# The stowed ~/.ssh/config uses ControlMaster with sockets in ~/.ssh/sockets so
+# repeated git operations reuse one authenticated connection (one YubiKey touch
+# per ControlPersist window instead of one per fetch). ssh won't create the
+# socket directory itself, and it must not be stow-managed: sockets are
+# runtime state, not config. Idempotent.
+ensure_ssh_sockets() {
+  local dir="$HOME/.ssh/sockets"
+  mkdir -p "$HOME/.ssh" "$dir"
+  chmod 700 "$HOME/.ssh" "$dir"
+}
+
+# ---------------------------------------------------------------------------
 # git machine-local config
 # ---------------------------------------------------------------------------
 
@@ -220,6 +235,7 @@ cmd_yubikey() {
 cmd_install() {
   cmd_packages
   cmd_stow
+  ensure_ssh_sockets
   cmd_gitlocal
   log "Setup complete."
   if ! ls "$HOME"/.ssh/id_*_sk_rk_* >/dev/null 2>&1; then
