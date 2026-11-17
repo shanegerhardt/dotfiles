@@ -1,3 +1,9 @@
+# See: https://nikitabobko.github.io/AeroSpace/guide#config-version
+config-version = 2
+
+# Workspaces kept alive even when empty (explicit since config-version 2)
+persistent-workspaces = ['A', 'S', 'D', 'W', 'Q', 'E', 'F', 'R']
+
 after-startup-command = [
     'exec-and-forget brew services restart borders'
 ]
