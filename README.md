@@ -9,7 +9,7 @@ Xcode Command Line Tools (needed for git), clones this repo to `~/git/dotfiles`,
 then runs `./install.sh all`:
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/shanegerhardt/dotfiles/main/bootstrap.sh)"
+/bin/bash -c "$(curl -fsSL https://dot.shanegerhardt.com)"
 ```
 
 ## Everyday use — `install.sh`
