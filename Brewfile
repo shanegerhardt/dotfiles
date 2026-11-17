@@ -12,7 +12,7 @@ brew "zsh-autosuggestions"
 tap "FelixKratz/formulae"
 brew "borders"
 
-cask "raycast"
+cask "tinycast"
 cask "zed"
 cask "nikitabobko/tap/aerospace"
 cask "font-jetbrains-mono"
