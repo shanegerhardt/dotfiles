@@ -8,6 +8,7 @@ brew "mise"
 brew "starship"
 brew "lazygit"
 brew "zsh-autosuggestions"
+brew "terminal-notifier"
 
 tap "FelixKratz/formulae"
 brew "borders"
